@@ -26,6 +26,8 @@ As you can see, our example contains 5 levels, starting with Level 0. As we trav
 
 So, for example, here, our traversal would print out `0`, `-1`, `1`, `2`, `3`, `4`.
 
+In contrast, a depth-first inorder traversal would print out `-1`, `0`, `1`, `2`, `3`, `4` because it would attempt to go as deep as possible first, from left to right, before reading the value of the nodes.
+
 Now that we understand BSTs and breadth-first traversal, let's talk about the solution we used to get there.
 
 Initially, one would think that we simply need to iterate through the tree starting from the root node and print the values as we go along. Sounds simple enough, and is exactly what I thought would be the case.
@@ -37,6 +39,12 @@ So, because we can only visit each node once, one possible solution to this prob
 Why? Because a queue is a First In, First Out data structure (FIFO), meaning the first node to go in will also be the first node to get read and printed to the screen. Let's take a look at what that looks like:
 
 ![Queue](assets/images/Queue.png)
+
+What we're doing here is, starting from the root node, we take all of the children of that root node, and place it in the Queue in a FIFO, left to right, order. As we do so, we read the value of the nodes when they are removed from the Queue. We then continue to do this until there are no nodes left in the queue. 
+
+So, for our example, the root node, `0` would be added to the queue as the root. Then, we remove the last value in that Queue (this still being `0` node), print its value to the screen, and all of it's children, `-1` and `1` would be added to the queue. This process is continued until there are no nodes left in the queue to process.
+
+Doing this will print out the values in a breadth-first traversal order without the need to have the ability to "traverse up" a tree.
 
 ## Performance
 
