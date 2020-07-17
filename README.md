@@ -40,11 +40,11 @@ Why? Because a queue is a First In, First Out data structure (FIFO), meaning the
 
 ![Queue](assets/images/Queue.png)
 
-What we're doing here is, starting from the root node, we take all of the children of that root node, and place it in the Queue in a FIFO, left to right, order. As we do so, we read the value of the nodes when they are removed from the Queue. We then continue to do this until there are no nodes left in the queue. 
+What we're doing here is, starting from the root node, we take all of the children of that root node, and place it in the queue in a FIFO, left to right, order. As we do so, we read the value of the nodes when they are removed from the queue. We then continue to do this until there are no nodes left in the queue. 
 
-So, for our example, the root node, `0` would be added to the queue as the root. Then, we remove the last value in that Queue (this still being `0` node), print its value to the screen, and all of it's children, `-1` and `1` would be added to the queue. This process is continued until there are no nodes left in the queue to process.
+So, for our example, the root node, `0` would be added to the queue as the root. Then, we remove the last value in that queue (this still being `0` node), print its value to the screen, and all of its children, `-1` and `1` would be added to the queue. This process is continued until there are no nodes left in the queue to process.
 
-Doing this will print out the values in a breadth-first traversal order without the need to have the ability to "traverse up" a tree.
+Doing this will print out the values in a breadth-first traversal order without requiring the ability to "traverse up" a tree.
 
 ## Performance
 
