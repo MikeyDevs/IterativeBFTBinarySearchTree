@@ -22,6 +22,22 @@ Using the breadth-first approach to traversal, as opposed to depth-first, we pri
 
 ![BinaryTree](assets/images/BinaryTree.png)
 
+As you can see, our example contains 5 levels, starting with Level 0. As we traverse through the tree in a breadth-first fashion, we print out each node's values, from left to right, and from top to bottom, starting at Level 0 and working our way down to Level 4.
+
+So, for example, here, our traversal would print out `0`, `-1`, `1`, `2`, `3`, `4`.
+
+Now that we understand BSTs and breadth-first traversal, let's talk about the solution we used to get there.
+
+Initially, one would think that we simply need to iterate through the tree starting from the root node and print the values as we go along. Sounds simple enough, and is exactly what I thought would be the case.
+
+However, as we think about the solution, we realize there is a problem with that implementation: there is no way to traverse UP a tree, only down. That means, we can go either left or right from the root node once, and we cannot come back again. That makes traversing through a tree breadth-first difficult, because we need to print them out in order of level, and that means we need to be able to go back UP in order to finish printing out the left and right values.
+
+So, because we can only visit each node once, one possible solution to this problem is to store each node we traverse in a data structure that preserves depth-first order of the tree so that we can print them out later. A queue would be perfect! 
+
+Why? Because a queue is a First In, First Out data structure (FIFO), meaning the first node to go in will also be the first node to get read and printed to the screen. Let's take a look at what that looks like:
+
+![Queue](assets/images/Queue.png)
+
 ## Performance
 
 For performance, the runtime complexity of this solution is linear, or O(n). This is because the time it takes to iterate through the queue depends directly on the size of the tree's nodes.
